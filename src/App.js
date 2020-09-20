@@ -1,20 +1,23 @@
 import React from 'react';
-import './App.css';
+import {
+  BrowserRouter as Router
+} from 'react-router-dom';
 import Footer from './Components/Footer/Footer/Footer';
 import Header from './Components/Header/Header';
-import ProductDetails from './Components/ProductDetails/ProductDetails.js/ProductDetails';
-import Productlist from './Components/ProductList/Productlist';
-import MainRouting from './Routing/MainRouting';
+import {AppRoutes} from './Routes/Routes'
 
 
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Header />
-      <MainRouting />
-      {/* <Productlist /> */}
-      <ProductDetails />
+
+        <Router>
+          <AppRoutes />
+        </Router>
+
       <Footer />
     </div>
   );
