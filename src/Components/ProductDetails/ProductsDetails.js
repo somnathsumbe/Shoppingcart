@@ -16,7 +16,7 @@ export default class ProductsDetails extends Component {
             .then(res => {
                 if (this.props.match.params.id) {
                     let product = res.data.filter((product) => {
-                        return product.id == this.props.match.params.id;
+                        return product.id === this.props.match.params.id;
                     })
                     this.setState({ list: product });
                 }
@@ -39,7 +39,7 @@ export default class ProductsDetails extends Component {
                                                 <div className="preview col-md-6">
 
                                                     <div className="preview-pic tab-content">
-                                                        <div className="tab-pane active" id="pic-1"><img src={item.img} style={{ "height": 300 }} /></div>
+                                                        <div className="tab-pane active" id="pic-1"><img src={item.img} alt={item.name} style={{ "height": 300 }} /></div>
                                                     </div>
 
 

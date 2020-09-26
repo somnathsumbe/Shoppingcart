@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Helper from '../../Shared/Helper';
 
 export default class Productlist extends Component {
     constructor() {
@@ -19,7 +20,7 @@ export default class Productlist extends Component {
             .then(res => {
                 if (this.props.match.params.type && res.data) {
                     let products = res.data.filter((product) => {
-                        return (product.productType).replace(/\s/g, '').toLowerCase() == this.props.match.params.type;
+                        return Helper.replaceWhiteSpace(product.productType) === this.props.match.params.type;
                     })
                     console.log("products=>", products);
                     this.setState({ productList: products });
@@ -27,7 +28,7 @@ export default class Productlist extends Component {
             })
 
     }
-    componentWillReceiveProps(prevProps, newProps) {
+    componentDidUpdate() {
         this.getProductList();
     }
 

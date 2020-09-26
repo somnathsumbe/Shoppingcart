@@ -12,7 +12,7 @@ export default class Home extends Component {
                 Helper.navItems.map((item, index) => {
                   return (
                     <>
-                      <Carousal key={index} product={item} productIndex={index}>
+                      <Carousal key={'carousal-'+index+1} product={item} productIndex={index}>
                       </Carousal>
                     </>
                   )

@@ -7,14 +7,14 @@ export default class NavBar extends Component {
 
     render() {
 
-        const navList = Helper.navItems.map((item) => {
-            let productName = (`${item.name}`).replace(/\s/g, '').toLowerCase();
-            let path = (`${item.path}/${productName}`)
-
+        const navList = Helper.navItems.map((item, index) => {
+            
             return (
 
                 <>
-                    <NavLink exact={true} activeClassName='is-active' to={path}>{item.name}</NavLink>
+                    <NavLink key={'nav-'+index} exact={true} activeClassName='is-active' to={`${item.path}/${Helper.replaceWhiteSpace(item.name)}`}>
+                        {item.name}
+                    </NavLink>
                 </>
             )
         })
