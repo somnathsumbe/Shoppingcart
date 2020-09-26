@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import Helper from '../../Shared/Helper'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class NavBar extends Component {
+
     render() {
+
         const navList = Helper.navItems.map((item) => {
+            let productName = (`${item.name}`).replace(/\s/g, '').toLowerCase();
+            let path = (`${item.path}/${productName}`)
+
             return (
+
                 <>
-                    <Nav.Link activeClassName={item.isActive ? 'active' : ''} producttype={item.name}>
-                        <Link to={item.path}>{item.name}</Link>
-                    </Nav.Link>
+                    <NavLink exact={true} activeClassName='is-active' to={path}>{item.name}</NavLink>
                 </>
             )
         })
         return (
             <>
-                <Navbar bg="light" expand="lg" sticky="top" >
+                <Navbar bg="light" expand="lg" sticky="top" className="mainmenu">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="justify-content-center" >

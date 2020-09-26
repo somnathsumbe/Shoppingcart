@@ -38,3 +38,34 @@ body {
 .h2, h2 {
   font-size: 1.3rem;
 }
+
+.logo a {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--app-primary-color);
+  text-decoration: none;
+  display: inline-block;
+  pointer-events: auto;
+}
+.logo a:hover{
+  text-decoration: none;
+  color: #202020
+}
+
+
+.mainmenu a {
+  display: inline-block;
+  outline: none;
+  padding: 9px 5px;
+  font-size: 17px;
+  text-decoration: none;
+  color: #202020
+}
+
+.mainmenu a:hover{
+  color: #202020;
+  text-decoration: none;
+}
+
+.is-active{ border: 1px solid #dfe8f1;    border-bottom: 2px solid #212529;}

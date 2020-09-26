@@ -6,13 +6,14 @@ export default class Header extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <div className="row p-3">
-                    <div className="col-md-11">
-                        <a href="/" aria-label="SHOP Home">SHOP</a>
+                <div className="row py-4">
+                    <div className=" col-sm-6 col-md-12">
+                        <div className="logo text-center">
+                            <a href="/" aria-label="SHOP Home">SHOP</a>
+                            <FontAwesomeIcon icon={faCartPlus} pull="right" size='2x' />
+                        </div>
                     </div>
-                    <div className="col-md-1">
-                        <FontAwesomeIcon icon={faCartPlus} pull="right" />
-                    </div>
+
                 </div>
 
             </div>

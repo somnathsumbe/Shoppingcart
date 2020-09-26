@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import Footer from './Components/Footer/Footer/Footer';
 import Header from './Components/Header/Header';
-import {AppRoutes} from './Routes/Routes'
+import { AppRoutes } from './Routes/Routes'
 
 
 import './App.css';
@@ -14,9 +14,9 @@ function App() {
     <div className="App" >
       <Header />
 
-        <Router>
-          <AppRoutes />
-        </Router>
+      <Router>
+        <AppRoutes />
+      </Router>
 
       <Footer />
     </div>

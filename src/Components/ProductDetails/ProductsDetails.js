@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
-
-export default class ProductDetails extends Component {
+export default class ProductsDetails extends Component {
 
     constructor() {
         super();
@@ -15,7 +14,12 @@ export default class ProductDetails extends Component {
     componentDidMount() {
         axios.get(`http://localhost:3000/ProductList`)
             .then(res => {
-                this.setState({ list: res.data });
+                if (this.props.match.params.id) {
+                    let product = res.data.filter((product) => {
+                        return product.id == this.props.match.params.id;
+                    })
+                    this.setState({ list: product });
+                }
             })
     }
 
@@ -90,11 +94,6 @@ export default class ProductDetails extends Component {
                                 </div>
                                     </div>
                                 }
-
-
-
-
-
                             </div>
                         </div>
                     </div>
@@ -104,3 +103,4 @@ export default class ProductDetails extends Component {
         )
     }
 }
+
